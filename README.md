@@ -10,7 +10,7 @@ Spikkl-php-laravel-client incorporates the [Spikkl API](https://www.spikkl.nl/do
 ## Requirements ##
 
 + Get yourself a free [Spikkl account](https://www.spikkl.nl/signup). No sign up costs.
-+ Follow [a few steps](https://www.spikkl.nl/billing) to enable a suitable subscription to talk to the API.
++ Follow [a few steps](https://www.spikkl.nl/account/billing) to enable a suitable subscription to talk to the API.
 + A valid API key which can be generated from your [Spikkl dashboard](https://www.spikkl.nl/credentials).
 + PHP >= 7.1.
 + [Laravel](https://www.laravel.com) (or [Lumen](https://lumen.laravel.com)) >= 5.5
