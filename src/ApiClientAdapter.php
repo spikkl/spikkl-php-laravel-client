@@ -106,15 +106,15 @@ class ApiClientAdapter
      * Wrapper for client reverse method.
      *
      * @param string $countryIso3Code
-     * @param string|float $latitude
      * @param string|float $longitude
+     * @param string|float $latitude
      *
      * @return stdClass
      *
      * @throws ApiException
      */
-    public function reverse($countryIso3Code, $latitude, $longitude)
+    public function reverse($countryIso3Code, $longitude, $latitude)
     {
-        return $this->client->reverse($countryIso3Code, $latitude, $longitude);
+        return $this->client->reverse($countryIso3Code, $longitude, $latitude);
     }
 }

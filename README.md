@@ -56,11 +56,12 @@ Here you can see an example of just how simple this package is to use.
 $results = Spikkl::api()->lookup('nld', '2611HB', '175', null);
 ```
 
-### Location reverse lookup by supported country code, latitude, and longitude
+### Location reverse lookup by supported country code, longitude, and latitude.
 
 ```php
-$results = Spikkl::api()->reverse('nld', 52.012133, 4.354901);
+$results = Spikkl::api()->reverse('nld', 4.354901, 52.012133);
 ```
+Note: longitude and latitude values will be rounded to 9 decimal places.
 
 ### Global helper method
 For your convenience we have added the global `spikkl()` helper  function. It is an easy shortcut to the `Spikkl::api()` facade accessor.
