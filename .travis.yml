@@ -17,6 +17,8 @@ env:
     matrix:
         - LARAVEL='5.8.*' TESTBENCH='3.8.*'
         - LARAVEL='6.*' TESTBENCH='4.*'
+        - LARAVEL='7.*' TESTBENCH='5.*'
+        - LARAVEL='8.*' TESTBENCH='6.*'
 
 matrix:
     fast_finish: true

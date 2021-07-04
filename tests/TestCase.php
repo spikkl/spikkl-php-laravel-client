@@ -11,11 +11,9 @@ abstract class TestCase extends AbstractPackageTestCase
     /**
      * Get the service provider class.
      *
-     * @param Application $app
-     *
      * @return string
      */
-    protected function getServiceProviderClass($app)
+    protected function getServiceProviderClass()
     {
         return ServiceProvider::class;
     }

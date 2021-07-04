@@ -2,6 +2,13 @@
 
 namespace Spikkl\Laravel;
 
+use Spikkl\Api\Exceptions\AccessRestrictedException;
+use Spikkl\Api\Exceptions\InvalidApiKeyException;
+use Spikkl\Api\Exceptions\InvalidRequestException;
+use Spikkl\Api\Exceptions\OutOfRangeException;
+use Spikkl\Api\Exceptions\QuotaReachedException;
+use Spikkl\Api\Exceptions\RevokedApiKeyException;
+use Spikkl\Api\Exceptions\ZeroResultsException;
 use stdClass;
 use Illuminate\Config\Repository;
 use Spikkl\Api\ApiClient;
@@ -95,6 +102,12 @@ class ApiClientAdapter
      *
      * @return stdClass
      *
+     * @throws AccessRestrictedException
+     * @throws InvalidApiKeyException
+     * @throws RevokedApiKeyException
+     * @throws InvalidRequestException
+     * @throws QuotaReachedException
+     * @throws ZeroResultsException
      * @throws ApiException
      */
     public function lookup($countryIso3Code, $postalCode, $streetNumber = null, $streetNumberSuffix = null)
@@ -111,6 +124,13 @@ class ApiClientAdapter
      *
      * @return stdClass
      *
+     * @throws AccessRestrictedException
+     * @throws InvalidApiKeyException
+     * @throws RevokedApiKeyException
+     * @throws InvalidRequestException
+     * @throws OutOfRangeException
+     * @throws QuotaReachedException
+     * @throws ZeroResultsException
      * @throws ApiException
      */
     public function reverse($countryIso3Code, $longitude, $latitude)
