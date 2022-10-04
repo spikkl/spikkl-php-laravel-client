@@ -16,15 +16,9 @@ use Spikkl\Api\Exceptions\ApiException;
 
 class ApiClientAdapter
 {
-    /**
-     * @var Repository
-     */
-    protected $config;
+    protected Repository $config;
 
-    /**
-     * @var ApiClient
-     */
-    protected $client;
+    protected ApiClient $client;
 
     /**
      * ApiWrapper constructor.
@@ -49,7 +43,7 @@ class ApiClientAdapter
      *
      * @param string $url
      */
-    public function setApiEndpoint($url)
+    public function setApiEndpoint(string $url): void
     {
         $this->client->setApiEndpoint($url);
     }
@@ -59,7 +53,7 @@ class ApiClientAdapter
      *
      * @return string
      */
-    public function getApiEndpoint()
+    public function getApiEndpoint(): string
     {
         return $this->client->getApiEndpoint();
     }
@@ -73,7 +67,7 @@ class ApiClientAdapter
      *
      * @throws ApiException
      */
-    public function setApiKey($apiKey)
+    public function setApiKey(string $apiKey): void
     {
         $this->client->setApiKey($apiKey);
     }
@@ -85,7 +79,7 @@ class ApiClientAdapter
      *
      * @return ApiClientAdapter
      */
-    public function addVersionString($versionString)
+    public function addVersionString(string $versionString): self
     {
         $this->client->addVersionString($versionString);
 
@@ -110,7 +104,7 @@ class ApiClientAdapter
      * @throws ZeroResultsException
      * @throws ApiException
      */
-    public function lookup($countryIso3Code, $postalCode, $streetNumber = null, $streetNumberSuffix = null)
+    public function lookup(string $countryIso3Code, string $postalCode, ?int $streetNumber = null, ?string $streetNumberSuffix = null)
     {
         return $this->client->lookup($countryIso3Code, $postalCode, $streetNumber, $streetNumberSuffix);
     }

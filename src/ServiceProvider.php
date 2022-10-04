@@ -17,7 +17,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->setupConfig();
     }
@@ -27,7 +27,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerApiClient();
         $this->registerApiAdapter();
@@ -39,7 +39,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    protected function setupConfig()
+    protected function setupConfig(): void
     {
         $source = realpath(__DIR__ . '/../config/spikkl.php');
 
@@ -59,7 +59,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    protected function registerManager()
+    protected function registerManager(): void
     {
         $this->app->singleton('spikkl', function (Container $app) {
             return new Manager($app);
@@ -73,7 +73,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    protected function registerApiAdapter()
+    protected function registerApiAdapter(): void
     {
         $this->app->singleton('spikkl.api', function (Container $app) {
             $config = $app['config'];
@@ -87,7 +87,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return void
      */
-    protected function registerApiClient()
+    protected function registerApiClient(): void
     {
         $this->app->singleton('spikkl.api.client', function () {
             return (new ApiClient())->addVersionString('Laravel/' . self::PACKAGE_VERSION);
@@ -101,7 +101,7 @@ class ServiceProvider extends BaseServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'spikkl',

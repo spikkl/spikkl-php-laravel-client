@@ -6,10 +6,7 @@ use Illuminate\Contracts\Container\Container;
 
 class Manager
 {
-    /**
-     * @var Container
-     */
-    protected $app;
+    protected Container $app;
 
     /**
      * SpikklManager constructor.
@@ -24,9 +21,9 @@ class Manager
     /**
      * Get the Spikkl API adapter instance.
      *
-     * @return mixed
+     * @return ApiClientAdapter
      */
-    public function api()
+    public function api(): ApiClientAdapter
     {
         return $this->app['spikkl.api'];
     }
